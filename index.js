@@ -55,7 +55,7 @@ module.exports = function (app, options) {
     for (let j = 0; j < names.length; j++) {
       const name = names[j];
       const filepath = path.join(dir, name);
-      // support en_US.js => en-US.js
+      // support en_US.js => en-us.js
       const locale = formatLocale(name.split('.')[0]);
       let resource = {};
 
@@ -288,7 +288,7 @@ function formatWithObject(text, values) {
 }
 
 function formatLocale(locale) {
-  // support zh_CN, en_US => zh-CN, en-US
+  // support zh_CN, en_US => zh-cn, en-us
   return locale.replace('_', '-').toLowerCase();
 }
 
